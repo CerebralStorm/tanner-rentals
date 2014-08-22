@@ -8,10 +8,16 @@
 </head>
 <body>
 
-<%= render 'layouts/navbar' %>
-<div id="main-body">
-<%= yield %>
-</div>
-<%= render 'layouts/footer' %>
+<% if params[:controller] == 'ember' %>
+  <div id="ember-body">
+    <%= yield %>
+  </div>
+<% else %>
+  <%= render 'layouts/navbar' %>
+  <div id="main-body">
+  <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
+<% end %>
 </body>
 </html>

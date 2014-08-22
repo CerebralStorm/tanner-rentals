@@ -13,4 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require tanner_rentals
 //= require_tree .
+
+
+window.TannerRentals = Ember.Application.create();
+window.TannerRentals.deferReadiness();
+
+$(document).ready(function() {
+  if($('#ember-body').length > 0) { window.TannerRentals.advanceReadiness(); }
+});
+
