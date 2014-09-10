@@ -8,6 +8,10 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
+  <meta name="current-user" content="<%= (current_user.id).to_json %>" />
+<% end %>
+
 <% if params[:controller] == 'ember' %>
   <div id="ember-body">
     <%= yield %>

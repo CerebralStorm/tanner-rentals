@@ -11,6 +11,13 @@
  *= require_self
  *= require_tree .
  */
+.ember-view {
+ height: 100%;
+}
+
+body, html, .container {
+  height:100%;
+}
 
 #main-footer {
     padding: 50px 0;

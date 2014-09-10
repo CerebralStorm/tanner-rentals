@@ -1,5 +1,5 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 TannerRentals.Router.map ()->
-  # @resource('posts')
+  @route 'settings', { path:'/settings/:user_id'}
 

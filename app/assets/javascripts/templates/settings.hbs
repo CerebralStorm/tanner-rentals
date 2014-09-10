@@ -1,0 +1,46 @@
+<div class="panel">
+  <div class="panel-heading">
+    <h3 class="panel-title">Settings</h3>
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="form-group">
+        <label class= "col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+          {{input name="Name" value=name classNames="form-control"}}
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="form-group">
+        <label class= "col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+          {{input name="Email" value=email classNames="form-control"}}
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="form-group">
+        <label class= "col-sm-2 control-label">Phone</label>
+        <div class="col-sm-10">
+          {{input name="Phone" value=phone classNames="form-control"}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input {{action "saveUser"}} type="submit" class="btn btn-lg btn-block btn-success" value="Submit" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

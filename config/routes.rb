@@ -1,6 +1,15 @@
 TannerRentals::Application.routes.draw do
-  get "ember/start"
   devise_for :users
+
+  resources :users
+  root to: "ember#start"
+  # unauthenticated do
+  #   root to: "devise/sessions#new", as: :unauthenticated_root
+  # end
+
+  # authenticated :user do
+  #   root to: "ember#start", as: :authenticated_root
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
