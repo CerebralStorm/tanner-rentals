@@ -12,7 +12,7 @@
  *= require_tree .
  */
 .ember-app {
- height: 90%;
+ height: 85%;
  background: url('ebackground.jpg');
  background-size: 100% auto;
 }
@@ -24,7 +24,7 @@ body, html, .container {
 #main-footer {
     margin-top: -90px;
     padding: 50px 0;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(200,200,200,0.1);
 }
 
 .intro-header {
