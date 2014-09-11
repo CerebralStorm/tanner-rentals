@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-offset-1">
+    <h3>Contact</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-1 well well-lg">
+    <div class="form-group">
+      <label class= "control-label">Name</label>
+      {{input name="Name" value=name classNames="form-control input-sm"}}
+    </div>
+
+    <div class="form-group">
+      <label class= "control-label">Email</label>
+      {{input name="Email" value=email classNames="form-control input-sm"}}
+    </div>
+
+    <div class="form-group">
+      <label class= "control-label">Message</label>
+      {{textarea name="message" value=message classNames="form-control input-sm"}}
+    </div>
+
+    <div class="form-group">
+      <input {{action "sendMessage"}} type="submit" class="btn btn-lg btn-block btn-success" value="Submit" />
+    </div>
+  </div>
+
+  <div class="col-md-5 col-md-offset-1">
+    <h4><i class="icon-rocket"></i> <strong>We would love to hear from you!</strong></h4>
+    <p>
+       Feel free to drop us a line for any reason. It could be something you love, something you want changed.
+       Let us know, your feedback is important!
+    </p>
+  </div>
+</div>

@@ -14,14 +14,13 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           {{#link-li}}
-            {{#link-to 'index'}}
-              Profile
-            {{/link-to}}
+            {{#link-to 'index'}}Profile{{/link-to}}
           {{/link-li}}
           {{#link-li}}
-            {{#link-to 'settings' currentUser}}
-              Settings
-            {{/link-to}}
+            {{#link-to 'settings' currentUser}}Settings{{/link-to}}
+          {{/link-li}}
+          {{#link-li}}
+            {{#link-to 'contact'}}Contact{{/link-to}}
           {{/link-li}}
         </ul>
         <ul class="nav navbar-nav pull-right">
@@ -38,6 +37,7 @@
 </div>
 
 <div id="ember-body" class="container">
+  {{view TannerRentals.FlashView model=TannerRentals.flash}}
   {{outlet}}
 </div><!-- /container -->
 
@@ -48,19 +48,15 @@
       <div class="col-lg-12">
         <ul class="list-inline">
           <li>
-            <a href="#home">Home</a>
+            {{#link-to 'index'}}Profile{{/link-to}}
           </li>
           <li class="footer-menu-divider">&sdot;</li>
           <li>
-            <a href="#about">About</a>
+            {{#link-to 'settings' currentUser}}Settings{{/link-to}}
           </li>
           <li class="footer-menu-divider">&sdot;</li>
           <li>
-            <a href="#services">Services</a>
-          </li>
-          <li class="footer-menu-divider">&sdot;</li>
-          <li>
-            <a href="#contact">Contact</a>
+            {{#link-to 'contact'}}Contact{{/link-to}}
           </li>
         </ul>
         <p class="copyright text-muted small">Copyright &copy; Tanner Rentals 2014. All Rights Reserved</p>

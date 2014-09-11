@@ -2,4 +2,5 @@
 
 TannerRentals.Router.map ()->
   @route 'settings', { path:'/settings/:user_id'}
+  @route 'contact'
 

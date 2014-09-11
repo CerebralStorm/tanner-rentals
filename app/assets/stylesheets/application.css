@@ -11,8 +11,8 @@
  *= require_self
  *= require_tree .
  */
-.ember-view {
- height: 100%;
+.ember-app {
+ height: 70%;
 }
 
 body, html, .container {

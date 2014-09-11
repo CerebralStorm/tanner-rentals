@@ -1,46 +1,47 @@
-<div class="panel">
-  <div class="panel-heading">
-    <h3 class="panel-title">Settings</h3>
+<div class="row">
+  <div class="col-md-offset-1">
+    <h3>Settings</h3>
   </div>
-  <div class="panel-body">
+</div>
 
-    <div class="row">
-      <div class="form-group">
-        <label class= "col-sm-2 control-label">Name</label>
-        <div class="col-sm-10">
-          {{input name="Name" value=name classNames="form-control"}}
-        </div>
-      </div>
+<div class="row">
+  <div class="col-md-4 col-md-offset-1 well well-lg">
+    <div class="form-group">
+      <label class= "control-label">Name</label>
+      {{input name="Name" value=name classNames="form-control input-sm"}}
     </div>
 
-    <br />
-
-    <div class="row">
-      <div class="form-group">
-        <label class= "col-sm-2 control-label">Email</label>
-        <div class="col-sm-10">
-          {{input name="Email" value=email classNames="form-control"}}
-        </div>
-      </div>
+    <div class="form-group">
+      <label class= "control-label">Email</label>
+      {{input name="Email" value=email classNames="form-control input-sm"}}
     </div>
 
-    <br />
-
-    <div class="row">
-      <div class="form-group">
-        <label class= "col-sm-2 control-label">Phone</label>
-        <div class="col-sm-10">
-          {{input name="Phone" value=phone classNames="form-control"}}
-        </div>
-      </div>
+    <div class="form-group">
+      <label class= "control-label">Phone</label>
+      {{input name="Phone" value=phone classNames="form-control input-sm"}}
     </div>
 
-    <div class="row">
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <input {{action "saveUser"}} type="submit" class="btn btn-lg btn-block btn-success" value="Submit" />
-        </div>
-      </div>
+    <div class="form-group">
+      <input {{action "saveUser"}} type="submit" class="btn btn-lg btn-block btn-success" value="Submit" />
     </div>
+  </div>
+
+  <div class="col-md-5 col-md-offset-1">
+    <h4><i class="icon-rocket"></i> <strong>Thank You</strong></h4>
+    <p>
+       Thanks for taking just a moment out of your day to keep your information up to date.
+       It is really important for us to have a reliable way to contact you.
+    </p>
+
+    <h4><i class="icon-lock"></i> <strong>No Spam Policy</strong></h4>
+    <p>
+      You can feel safe knowing that we never share any of your information with anyone.
+      It is simply a way for us to communicate with you, nothing more.
+    </p>
+
+    <h4><i class="icon-tag"></i> <strong>Need to contact us?</strong></h4>
+    <p>
+      Communication is a two way street. Should you need to reach us for any reason please {{#link-to "contact"}}click here{{/link-to}}
+    </p>
   </div>
 </div>

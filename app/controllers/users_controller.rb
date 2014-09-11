@@ -12,4 +12,20 @@ class UsersController < ApplicationController
   def show
     respond_with User.find(params[:id])
   end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      respond_with @user
+    else
+      respond_with render json: @user.errors, status: :unprocessable_entity
+    end
+  end
+
+private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :phone)
+  end
 end
