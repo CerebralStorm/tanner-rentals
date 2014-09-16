@@ -1,4 +1,8 @@
 TannerRentals::Application.routes.draw do
+  resources :properties
+
+  resources :leases
+
   devise_for :users
 
   resources :users

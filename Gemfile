@@ -13,6 +13,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'ember-rails'
 gem 'ember-source'
+gem 'prawn'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
