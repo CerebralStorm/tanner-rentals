@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.signaturepad
 //= require turbolinks
 //= require handlebars
 //= require ember

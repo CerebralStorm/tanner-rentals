@@ -13,7 +13,6 @@ TannerRentals.ApplicationAdapter = DS.ActiveModelAdapter.extend({
 
 $(->
   token = $('meta[name="csrf-token"]').attr('content')
-  console.log token
   $.ajaxPrefilter (options, originalOptions, xhr) ->
     xhr.setRequestHeader('X-CSRF-Token', token)
 )

@@ -1,0 +1,16 @@
+<h4>Properties</h4>
+
+<div class="row">
+  <div class="col-md-3">
+    <ul>
+    {{#each model}}
+      <li>{{#link-to 'property' this}}{{this.name}}{{/link-to}}</li>
+    {{/each}}
+    </ul>
+  </div>
+
+  <div class="col-md-9">
+    {{outlet}}
+  </div>
+</div>
+
