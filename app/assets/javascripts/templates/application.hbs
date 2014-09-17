@@ -1,5 +1,5 @@
 <!-- Fixed navbar -->
-<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <div class="container">
       <div class="navbar-header">
@@ -14,10 +14,10 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           {{#link-li}}
-            {{#link-to 'index'}}Profile{{/link-to}}
+            {{#link-to 'index'}}Home{{/link-to}}
           {{/link-li}}
           {{#link-li}}
-            {{#link-to 'users.settings' currentUser}}Settings{{/link-to}}
+            {{#link-to 'user'}}Profile{{/link-to}}
           {{/link-li}}
           {{#link-li}}
             {{#link-to 'contact'}}Contact{{/link-to}}
@@ -51,9 +51,9 @@
             {{#link-to 'index'}}Profile{{/link-to}}
           </li>
           <li class="footer-menu-divider">&sdot;</li>
-          <li>
-            {{#link-to 'users.settings' currentUser}}Settings{{/link-to}}
-          </li>
+          {{#link-li}}
+            {{#link-to 'user'}}Profile{{/link-to}}
+          {{/link-li}}
           <li class="footer-menu-divider">&sdot;</li>
           <li>
             {{#link-to 'contact'}}Contact{{/link-to}}

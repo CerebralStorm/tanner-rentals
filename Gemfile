@@ -16,6 +16,10 @@ gem 'ember-source'
 gem 'prawn'
 gem 'rails_admin'
 
+group :development, :test do
+  gem 'pry'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

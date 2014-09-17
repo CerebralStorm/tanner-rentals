@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if user.save
       render json: user, status: :created
     else
-      respond_with user
+      render json: {errors: user.errors}, status: 422
     end
   end
 

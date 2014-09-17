@@ -1,5 +1,3 @@
-# TannerRentals.ApplicationRoute = Ember.Route.extend
-#   beforeModel: ->
-#     currentUser = @controllerFor("currentUser").get('content')
-#     if !currentUser.get('hasLease')
-#       @transitionTo('properties')
+TannerRentals.ApplicationRoute = Ember.Route.extend
+    setupController: ->
+      @controllerFor('properties').set 'model', @store.find('property')
