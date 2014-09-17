@@ -13,6 +13,16 @@ class UsersController < ApplicationController
     respond_with User.find(params[:id])
   end
 
+  def create
+    user = User.new(params[:user])
+
+    if user.save
+      render json: user, status: :created
+    else
+      respond_with user
+    end
+  end
+
   def update
     @user = User.find(params[:id])
 

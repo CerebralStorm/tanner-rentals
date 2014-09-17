@@ -1,5 +1,5 @@
 <!-- Fixed navbar -->
-<div class="navbar navbar-inverse " role="navigation">
+<div class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <div class="container">
       <div class="navbar-header">
@@ -17,7 +17,7 @@
             {{#link-to 'index'}}Profile{{/link-to}}
           {{/link-li}}
           {{#link-li}}
-            {{#link-to 'settings' currentUser}}Settings{{/link-to}}
+            {{#link-to 'users.settings' currentUser}}Settings{{/link-to}}
           {{/link-li}}
           {{#link-li}}
             {{#link-to 'contact'}}Contact{{/link-to}}
@@ -52,7 +52,7 @@
           </li>
           <li class="footer-menu-divider">&sdot;</li>
           <li>
-            {{#link-to 'settings' currentUser}}Settings{{/link-to}}
+            {{#link-to 'users.settings' currentUser}}Settings{{/link-to}}
           </li>
           <li class="footer-menu-divider">&sdot;</li>
           <li>

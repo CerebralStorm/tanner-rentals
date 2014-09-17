@@ -1,11 +1,9 @@
 TannerRentals::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :properties
-
+  resources :sessions, only: [:create, :destroy]
   resources :leases
-
   devise_for :users
-
   resources :users
   root to: "ember#start"
   # unauthenticated do

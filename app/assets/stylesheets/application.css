@@ -12,55 +12,12 @@
  *= require_tree .
  */
 .ember-app {
- height: 85%;
+ height: 100%;
  background: url('ebackground.jpg');
  background-size: 100% auto;
 }
 
-body, html, .container {
-  height:100%;
-}
-
 #main-footer {
-    margin-top: -90px;
     padding: 50px 0;
     background-color: rgba(200,200,200,0.1);
-}
-
-.intro-header {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url('background.jpg') no-repeat center center;
-    background-size: cover;
-}
-
-.intro-message {
-    position: relative;
-    padding-top: 20%;
-    padding-bottom: 20%;
-}
-
-.intro-message > h1 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 5em;
-}
-
-.new_user {
-  padding: 20px;
-  background: rgba(0,0,0,0.6);
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-.intro-divider {
-    width: 400px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-
-.intro-message > h3 {
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }

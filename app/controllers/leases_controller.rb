@@ -1,4 +1,9 @@
 class LeasesController < ApplicationController
+  def new
+    @user = User.find(params[:user_id])
+    @property = Property.find(params[:property_id])
+  end
+
   def create
     pdf = LeasePdf.new
     respond_to do |format|

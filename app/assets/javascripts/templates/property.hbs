@@ -1,5 +1,5 @@
 <h4>Property</h4>
-
+{{id}}
 {{address}}
 {{city}}
 {{state}}
@@ -7,4 +7,4 @@
 
 {{outlet}}
 
-{{#link-to 'property.new_lease' this}}New Lease{{/link-to}}
+<a {{bindAttr href="newLeaseUrl"}} target="_blank">New Lease for this property</a>
