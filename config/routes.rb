@@ -4,8 +4,9 @@ TannerRentals::Application.routes.draw do
 
   resources :properties
   resources :leases
-  devise_for :users, :controllers => {:registrations => "users"}
+  resources :photos
 
+  devise_for :users, :controllers => {:registrations => "users"}
   resources :users
   resources :sessions
 
