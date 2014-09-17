@@ -4,7 +4,7 @@
       <h1>Tanner Rentals</h1>
       <p class="lead">Click on a property to view more details about it.</p>
       {{#each properties}}
-        {{this.address}}
+        {{#link-to "property" this}}{{this.address}}{{/link-to}}
       {{/each}}
     </div>
   </div>

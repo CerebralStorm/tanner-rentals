@@ -6,4 +6,16 @@ TannerRentals.IndexController = Ember.ObjectController.extend
 
   actions:
     saveUser: ->
-      @get('model').save()
+      user = @get('model')
+
+      success = (user) =>
+        TannerRentals.get("flash").success "Signed up successfully"
+        id = user.get('id')
+        @set('currentUser', @store.find('user', id))
+        @transitionTo('user')
+
+      failure = (response) =>
+        TannerRentals.get("flash").success "Sign up failed."
+        console.log response
+
+      user.save().then success, failure
