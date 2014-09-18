@@ -11,8 +11,12 @@
     <meta name="current-user" content="<%= (current_user.id).to_json %>" />
   <% end %>
 
-  <div id="ember-body">
+  <% if params[:controller] == "leases" %>
     <%= yield %>
-  </div>
+  <% else %>
+    <div id="ember-body">
+      <%= yield %>
+    </div>
+  <% end %>
 </body>
 </html>

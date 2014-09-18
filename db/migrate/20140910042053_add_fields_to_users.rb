@@ -3,6 +3,6 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :name, :string
     add_column :users, :phone, :string
     add_column :users, :has_lease, :boolean, default: false
-    add_column :users, :role, default: "Resident"
+    add_column :users, :role, :string, default: "Resident"
   end
 end

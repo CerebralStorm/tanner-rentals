@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.signaturepad
+//= require moment
+//= require bootstrap-datepicker
 //= require turbolinks
 //= require handlebars
 //= require ember
@@ -23,3 +25,10 @@
 
 
 window.TannerRentals = Ember.Application.create();
+window.TannerRentals.deferReadiness();
+
+$(document).ready(function () {
+  if($('#ember-body').length > 0) {
+    window.TannerRentals.advanceReadiness();
+  }
+});

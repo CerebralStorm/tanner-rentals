@@ -11,4 +11,5 @@ TannerRentals.Router.map ()->
     @route 'destroy'
 
   @route 'contact'
+  @route 'settings'
 

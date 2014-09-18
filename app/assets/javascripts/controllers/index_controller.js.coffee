@@ -12,7 +12,7 @@ TannerRentals.IndexController = Ember.ObjectController.extend
         TannerRentals.get("flash").success "Signed up successfully"
         id = user.get('id')
         @set('currentUser', @store.find('user', id))
-        @transitionTo('user')
+        @transitionToRoute('user')
 
       failure = (response) =>
         TannerRentals.get("flash").success "Sign up failed."

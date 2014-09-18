@@ -10,7 +10,7 @@ TannerRentals.SessionsNewController = Ember.ObjectController.extend
         TannerRentals.get("flash").success "Signed in successfully"
         id = session.get('id')
         @set('currentUser', @store.find('user', id))
-        @transitionTo('user')
+        @transitionToRoute('user')
 
       failure = (response) =>
         TannerRentals.get("flash").success "Sign in failed."

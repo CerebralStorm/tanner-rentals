@@ -8,3 +8,12 @@
 #= require_tree ./routes
 #= require ./router
 #= require_self
+
+$ ->
+  $('.datepicker').datepicker()
+
+  $('#lease_start_date').on "change", (event) ->
+    date = moment($(event.target).val(), "MM/DD/YYYY").add(12, "months")
+    $(".end-date").html(date.format("MM/DD/YYYY"))
+
+  $('.sigPad').signaturePad()

@@ -23,14 +23,26 @@
             {{#link-to 'contact'}}Contact{{/link-to}}
           {{/link-li}}
         </ul>
-        <ul class="nav navbar-nav pull-right">
-          <li class="divider"></li>
-          <li>
-            <a href="/users/sign_out" data-method="delete" id='sign_out_button'>
-              <i class="fa fa-sign-out"></i> Logout
-            </a>
-          </li>
-        </ul>
+        {{#if currentUser}}
+          <ul class="nav navbar-nav pull-right">
+            <li><p class="navbar-text">Logged in as {{currentUser.email}}</p></li>
+            {{#link-li}}
+              {{#link-to 'settings'}}Settings{{/link-to}}
+            {{/link-li}}
+            <li class="divider"></li>
+            <li>
+              <a href="/users/sign_out" data-method="delete" id='sign_out_button'>
+                <i class="fa fa-sign-out"></i> Logout
+              </a>
+            </li>
+          </ul>
+        {{else}}
+          <ul class="nav navbar-nav pull-right">
+            {{#link-li}}
+              {{#link-to "sessions.new"}}Sign In{{/link-to}}
+            {{/link-li}}
+          </ul>
+        {{/if}}
       </div>
     </div>
   </div>

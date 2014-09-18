@@ -1,8 +1,10 @@
 class LeasesController < ApplicationController
   before_filter :authenticate_user!
   def new
-    @user = User.find(params[:user_id])
+    @resident = User.find(params[:user_id])
     @property = Property.find(params[:property_id])
+    @owner = @property.owner
+    @lease = Lease.new
   end
 
   def create

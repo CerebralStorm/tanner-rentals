@@ -6,4 +6,4 @@ TannerRentals.SessionsDestroyRoute = Ember.Route.extend
       TannerRentals.Session.find('current').then (session) ->
         session.deleteRecord()
 
-      @transitionTo('index')
+      @transitionToRoute('index')
