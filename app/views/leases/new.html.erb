@@ -4,6 +4,8 @@
   <br>
 
   <%= form_for @lease do |f| %>
+    <%= f.hidden_field :property_id, @property.id %>
+    <%= f.hidden_field :user_id, @resident.id %>
     <p>This Rental Agreement or Residential Lease shall evidence the complete terms and conditions under which the parties
     whose signatures appear below have agreed. Landlord/Lessor/Agent, &nbsp;<u><%= @owner.name %></u>&nbsp;, shall be
     referred to as "OWNER" and Tenant(s)/Lessee, &nbsp;<u><%= @resident.name %></u>&nbsp;, shall be referred to as
@@ -284,4 +286,3 @@
     <hr>
   <% end %>
 </div>
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700,600" rel=stylesheet>

@@ -63,3 +63,9 @@ html, body, .container {
 .basic-input-xlg {
   width: 250px;
 }
+
+.signature {
+    font-family: "Journal";
+    font-size: 30px;
+    font-weight: bold;
+}

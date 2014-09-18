@@ -11,19 +11,25 @@ class LeasesController < ApplicationController
 
   def show
     @lease = Lease.find(params[:id])
+    @resident = @lease.user
+    @property = @lease.property
+    @owner = @property.owner
   end
 
   def create
     params[:lease][:start_date] = Date.strptime(params[:lease][:start_date], "%m/%d/%Y")
+    params[:lease][:resident_sign_date] = Date.strptime(params[:lease][:resident_sign_date], "%m/%d/%Y")
+    params[:lease][:owner_sign_date] = Date.strptime(params[:lease][:owner_sign_date], "%m/%d/%Y")
+    binding.pry
     @lease = Lease.new(lease_params)
 
     if @lease.save
-      if params[:resident_signature]
+      if params[:resident_signature].present?
         response = create_and_upload_signature(params[:resident_signature])
         @lease.update_attributes(resident_sig_url: response['url'])
       end
 
-      if params[:owner_signature]
+      if params[:owner_signature].present?
         response = create_and_upload_signature(params[:owner_signature])
         @lease.update_attributes(resident_sig_url: response['url'])
       end
