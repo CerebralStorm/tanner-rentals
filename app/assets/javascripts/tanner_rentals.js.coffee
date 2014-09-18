@@ -17,3 +17,11 @@ $ ->
     $(".end-date").html(date.format("MM/DD/YYYY"))
 
   $('.sigPad').signaturePad()
+
+  $("#resident_sig").hide()
+  $("#lease_resident_consent_to_esign").on "change", (event) ->
+    $("#resident_sig").toggle(event.target.checked)
+
+  $("#owner_sig").hide()
+  $("#lease_owner_consent_to_esign").on "change", (event) ->
+    $("#owner_sig").toggle(event.target.checked)

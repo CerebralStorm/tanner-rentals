@@ -14,11 +14,11 @@
     <ol>
       <li>
         TERMS: RESIDENT agrees to pay in advance $
-        <u><%= f.number_field :rent, class: "lease-input" %></u>
+        <u><%= f.number_field :rent, class: "basic-input-sm" %></u>
         per month on day
-        <%= f.select :day_rent_due, (1..28), {}, class: "lease-input" %>
+        <%= f.select :day_rent_due, (1..28), {} %>
         of each month. This agreement shall commence on
-        <%= f.text_field :start_date, class: "datepicker" %>
+        <%= f.text_field :start_date, class: "basic-input-sm datepicker" %>
         and continue; (check one)
 
         <div class="radio">
@@ -37,44 +37,34 @@
         </div>
       </li>
       <li>
-        PAYMENTS: Rent and/or other charges are to be paid at such place or method designated by the owner as follows
-        _____________________________________. All payments are to be made by check or money order and cash shall
-        be acceptable. OWNER acknowledges receipt of the First Month's rent of $__________, and a Security Deposit of
-        $__________, and additional charges/fees for ______________________________, for a total payment of
-        $__________. All payments are to be made payable to __________________________________.
+        PAYMENTS: Rent and/or other charges are to be paid at such place or method designated by the owner. Acceptable payments include payments made by check, money order, cash, or credit card. OWNER will provide receipts for payments upon request. A Security Deposit of $<u><%= f.number_field :security_deposit, class: "basic-input-sm" %></u> will be paid at time of first months rent. All payments are to be made payable to <u><%= f.text_field :make_payable_to, class: "basic-input-sm" %></u>.
       </li>
       <li>
         SECURITY DEPOSITS: The total of the above deposits shall secure compliance with the terms and conditions of
-        this agreement and shall be refunded to RESIDENT within _____ days after the premises have been completely
-        vacated less any amount necessary to pay OWNER; a) any unpaid rent, b) cleaning costs, c) key replacement costs, d)
-        cost for repair of damages to premises and/or common areas above ordinary wear and tear, and e) any other amount
-        legally allowable under the terms of this agreement. A written accounting of said charges shall be presented to
-        RESIDENT within _____ days of move-out. If deposits do not cover such costs and damages, the RESIDENT shall
+        this agreement and shall be refunded to RESIDENT within <u><%= f.number_field :days_security_deposit_return, class: "basic-input-sm" %></u>
+        days after the premises have been completely vacated less any amount necessary to pay OWNER; a) any unpaid rent, b) cleaning costs, c) key replacement costs, d) cost for repair of damages to premises and/or common areas above ordinary wear and tear,
+        and e) any other amount legally allowable under the terms of this agreement. A written accounting of said charges shall be presented to RESIDENT within <u><%= f.number_field :days_security_deposit_notice, class: "basic-input-sm" %></u> days of move-out. If deposits do not cover such costs and damages, the RESIDENT shall
         immediately pay said additional costs for damages to OWNER.
       </li>
       <li>
-        LATE CHARGE: A late fee of $_____, shall be added and due for any
-        payment of rent made after the ____________ of the month. Any dishonored check shall be treated as unpaid rent,
-        and subject to an additional fee of $_________.
+        LATE CHARGE: A late fee of $<u><%= f.number_field :late_fee, class: "basic-input-sm" %></u>, shall be added and due for any
+        payment of rent made after <%= f.select :days_rent_late, (1..28), {} %> days of the rent due date. Any dishonored check shall be treated as unpaid rent, and subject to the additional late fee.
       </li>
       <li>
         UTILITIES: RESIDENT agrees to pay all utilities and/or services based upon occupancy of the premises except
-        ____________________________________.
+        <u><%= f.text_field :included_utilities, class: "basic-input-xlg" %></u>.
       </li>
       <li>
         OCCUPANTS: Guest(s) staying over 15 days without the written consent of OWNER shall be considered a breach
         of this agreement. ONLY the following individuals and/or animals, AND NO OTHERS shall occupy the subject
         residence for more than 15 days unless the expressed written consent of OWNER obtained in advance
-        __________________________________________________.
+        <u><%= f.text_field :occupants, class: "basic-input-xlg" %></u>.
       </li>
       <li>
         PETS: No animal, fowl, fish, reptile, and/or pet of any kind shall be kept on or about the premises, for any amount
         of time, without obtaining the prior written consent and meeting the requirements of the OWNER. Such consent if
         granted, shall be revocable at OWNER'S option upon giving a 30 day written notice. In the event laws are passed or
-        permission is granted to have a pet and/or animal of any kind, an additional deposit in the amount of $_________
-        shall be required along with additional monthly rent of $_______ along with the signing of OWNER'S Pet
-        Agreement. RESIDENT also agrees to carry insurance deemed appropriate by OWNER to cover possible liability and
-        damages that may be caused by such animals.
+        permission is granted to have a pet and/or animal of any kind, an additional deposit in the amount of $<u><%= f.number_field :initial_pet_fee, class: "basic-input-xs" %></u> shall be required along with additional monthly rent of $<u><%= f.number_field :pet_fee, class: "basic-input-xs" %></u> along with the signing of OWNER'S Pet Agreement. RESIDENT also agrees to carry insurance deemed appropriate by OWNER to cover possible liability and damages that may be caused by such animals.
       </li>
       <li>
         LIQUID FILLED FURNISHINGS: No liquid filled furniture, receptacle containing more than ten gallons of
@@ -85,10 +75,7 @@
         PARKING: When and if RESIDENT is assigned a parking area/space on OWNER'S property, the parking
         area/space shall be used exclusively for parking of passenger automobiles and/or those approved vehicles listed on
         RESIDENT'S Application attached hereto. RESIDENT is hereby assigned or permitted to park only in the following
-        area or space ____________________________. The parking fee for this space (if applicable is $________ monthly.
-        Said space shall not be used for the washing, painting, or repair of vehicles. No other parking space shall be used by
-        RESIDENT or RESIDENT'S guest(s). RESIDENT is responsible for oil leaks and other vehicle discharges for which
-        RESIDENT shall be charged for cleaning if deemed necessary by OWNER.
+        area or space <u><%= f.text_field :parking_description, class: "basic-input-xlg" %></u>. The parking fee for this space (if applicable is $<u><%= f.number_field :parking_fee, class: "basic-input-xs" %></u> monthly. Said space shall not be used for the washing, painting, or repair of vehicles. No other parking space shall be used by RESIDENT or RESIDENT'S guest(s). RESIDENT is responsible for oil leaks and other vehicle discharges for which RESIDENT shall be charged for cleaning if deemed necessary by OWNER.
       </li>
       <li>
         NOISE: RESIDENT agrees not to cause or allow any noise or activity on the premises which might disturb the
@@ -203,11 +190,14 @@
       </li>
       <li>
         NOTICES: All notices to RESIDENT shall be served at RESIDENT'S premises and all notices to OWNER shall
-        be served at _______________________________________________________________.
+        be served at
+        <br />
+        <%= f.text_area :owner_notice_address, class: 'basic-input-xlg' %>
       </li>
       <li>
         INVENTORY: The premises contains the following items, that the RESIDENT may use.
-        _______________________________________________________________.
+        <br />
+        <%= f.text_area :inventory, class: 'basic-input-xlg' %>
       </li>
       <li>
         KEYS AND ADDDENDUMS: RESIDENT acknowledges receipt of the following which shall be deemed part of
@@ -223,13 +213,25 @@
         RECEIPT OF AGREEMENT: The undersigned RESIDENTS have read and understand this Agreement and
         hereby acknowledge receipt of a copy of this Rental Agreement.
       </li>
+      <li>
+        NOTES:
+        <br />
+        <%= f.text_area :notes, class: 'basic-input-xlg' %>
+      </li>
     </ol>
+
     <hr>
 
     <div class="row">
       <div class="col-sm-6">
         <h4>RESIDENT'S Signature</h4>
-        <div class="sigPad">
+        <div class="checkbox">
+          <label>
+            <%= f.check_box :resident_consent_to_esign %> By checking this box, you consent to an electronic signature.
+          </label>
+        </div>
+
+        <div id="resident_sig" class="sigPad">
           <%= f.label :resident_sign_date, "Date" %>
           <%= f.text_field :resident_sign_date, class: "datepicker" %>
           <label for="name">Print your name</label>
@@ -251,7 +253,12 @@
 
       <div class="col-sm-6">
         <h4>OWNER'S or Agent's Signature</h4>
-        <div class="sigPad">
+        <div class="checkbox">
+          <label>
+            <%= f.check_box :owner_consent_to_esign %> By checking this box, you consent to an electronic signature.
+          </label>
+        </div>
+        <div id="owner_sig" class="sigPad">
           <%= f.label :owner_sign_date, "Date" %>
           <%= f.text_field :owner_sign_date, class: "datepicker" %>
           <label for="name">Print your name</label>

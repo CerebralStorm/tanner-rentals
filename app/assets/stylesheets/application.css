@@ -43,3 +43,23 @@ html, body, .container {
   font-weight: normal;
   font-style: normal;
 }
+
+.basic-input-xs {
+  width: 75px;
+}
+
+.basic-input-sm {
+  width: 100px;
+}
+
+.basic-input-md {
+  width: 150px;
+}
+
+.basic-input-lg {
+  width: 200px;
+}
+
+.basic-input-xlg {
+  width: 250px;
+}
