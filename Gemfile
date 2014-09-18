@@ -17,6 +17,8 @@ gem 'prawn'
 gem 'rails_admin'
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'cloudinary'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'pry'

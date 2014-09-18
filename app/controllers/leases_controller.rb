@@ -14,6 +14,15 @@ class LeasesController < ApplicationController
     @resident = @lease.user
     @property = @lease.property
     @owner = @property.owner
+
+    respond_to do |format|
+      format.html { render }
+      format.pdf do
+        html = render_to_string('show.html.erb')
+        pdf = WickedPdf.new.pdf_from_string(html)
+        send_data(pdf, :type => "application/pdf", :disposition  => "inline")
+      end
+    end
   end
 
   def create

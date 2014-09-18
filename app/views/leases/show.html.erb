@@ -3,6 +3,8 @@
   <h2 class="text-center">TANNER RENTALS LEASE AGREEMENT</h2>
   <br>
 
+  <p id="pdf_link"><%= link_to "Download Lease (PDF)", lease_path(@lease, :format => "pdf") %></p>
+
     <p>This Rental Agreement or Residential Lease shall evidence the complete terms and conditions under which the parties
     whose signatures appear below have agreed. Landlord/Lessor/Agent, &nbsp;<u><%= @owner.name %></u>&nbsp;, shall be
     referred to as "OWNER" and Tenant(s)/Lessee, &nbsp;<u><%= @resident.name %></u>&nbsp;, shall be referred to as
