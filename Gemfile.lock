@@ -29,6 +29,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.2)
+    aws_cf_signer (0.1.2)
     barber (0.4.2)
       ember-source
       execjs
@@ -37,6 +38,9 @@ GEM
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.1.4)
+    cloudinary (1.0.69)
+      aws_cf_signer
+      rest-client
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -154,6 +158,8 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     remotipart (1.2.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     safe_yaml (0.9.7)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -199,6 +205,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  cloudinary
   coffee-rails (~> 4.0.0)
   devise
   ember-rails

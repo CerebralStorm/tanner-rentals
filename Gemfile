@@ -16,6 +16,7 @@ gem 'ember-source'
 gem 'prawn'
 gem 'rails_admin'
 gem 'font-awesome-sass', '~> 4.2.0'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'pry'

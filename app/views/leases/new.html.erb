@@ -23,14 +23,14 @@
 
         <div class="radio">
           <label>
-            <%= f.radio_button :month_to_month, "1", checked: true%>
+            <%= f.radio_button :month_to_month, "0", checked: true%>
             A. until <u><span class="end-date"></span></u>, as a leasehold. Thereafter it shall become a month-to-month tenancy. If RESIDENT should move from the premises prior to the expiration of this time period, he shall be liable for all rent due until such
             time that the Residence is occupied by an OWNER approved paying RESIDENT and/or expiration of said time period, whichever is shorter.
           </label>
         </div>
         <div class="radio">
           <label>
-            <%= f.radio_button :month_to_month, value: "0", checked: "checked" %>
+            <%= f.radio_button :month_to_month, value: "1", checked: "checked" %>
             B. until <u><span class="end-date"></span></u>, on a month-to-month tenancy until either party shall terminate this agreement by
             giving a written notice of intention to terminate at least 30 days prior to the date of termination.
           </label>
@@ -53,7 +53,7 @@
         immediately pay said additional costs for damages to OWNER.
       </li>
       <li>
-        LATE CHARGE: A late fee of $_____, (not to exceed ___% of the monthly rent), shall be added and due for any
+        LATE CHARGE: A late fee of $_____, shall be added and due for any
         payment of rent made after the ____________ of the month. Any dishonored check shall be treated as unpaid rent,
         and subject to an additional fee of $_________.
       </li>
@@ -230,10 +230,10 @@
       <div class="col-sm-6">
         <h4>RESIDENT'S Signature</h4>
         <div class="sigPad">
-          <%= f.label :start_date, "Date" %>
-          <%= f.text_field :start_date, class: "datepicker" %>
+          <%= f.label :resident_sign_date, "Date" %>
+          <%= f.text_field :resident_sign_date, class: "datepicker" %>
           <label for="name">Print your name</label>
-          <input type="text" name="name" id="name" class="name">
+          <input type="text" name="resident_name" id="resident_name" class="name">
           <p class="typeItDesc">Review your signature</p>
           <p class="drawItDesc">Draw your signature</p>
           <ul class="sigNav">
@@ -244,7 +244,7 @@
           <div class="sig sigWrapper">
             <div class="typed"></div>
             <canvas class="pad" width="198" height="55"></canvas>
-            <input type="hidden" name="output" class="output">
+            <input type="hidden" name="resident_signature" class="output">
           </div>
         </div>
       </div>
@@ -252,10 +252,10 @@
       <div class="col-sm-6">
         <h4>OWNER'S or Agent's Signature</h4>
         <div class="sigPad">
-          <%= f.label :start_date, "Date" %>
-          <%= f.text_field :start_date, class: "datepicker" %>
+          <%= f.label :owner_sign_date, "Date" %>
+          <%= f.text_field :owner_sign_date, class: "datepicker" %>
           <label for="name">Print your name</label>
-          <input type="text" name="name" id="name" class="name">
+          <input type="text" name="owner_name" id="owner_name" class="name">
           <p class="typeItDesc">Review your signature</p>
           <p class="drawItDesc">Draw your signature</p>
           <ul class="sigNav">
@@ -266,7 +266,7 @@
           <div class="sig sigWrapper">
             <div class="typed"></div>
             <canvas class="pad" width="198" height="55"></canvas>
-            <input type="hidden" name="output-2" class="output">
+            <input type="hidden" name="owner_signiture" class="output">
           </div>
         </div>
       </div>
