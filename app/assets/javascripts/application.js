@@ -19,6 +19,7 @@
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require ember-animate
 //= require_self
 //= require tanner_rentals
 //= require_tree .
