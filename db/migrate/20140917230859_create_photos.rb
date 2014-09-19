@@ -3,6 +3,7 @@ class CreatePhotos < ActiveRecord::Migration
     create_table :photos do |t|
       t.integer :property_id
       t.string :url
+      t.boolean :feature
 
       t.timestamps
     end

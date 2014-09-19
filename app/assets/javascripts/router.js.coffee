@@ -4,6 +4,8 @@ TannerRentals.Router.map ()->
   @resource 'properties', ->
     @resource 'property', path: ":property_id"
 
+  @resource 'users', ->
+    @route 'new'
   @resource 'user'
 
   @resource 'sessions', ->

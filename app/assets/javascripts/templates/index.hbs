@@ -1,46 +1,27 @@
-<div class="row">
-  <div class="col-md-8">
-    <div class="jumbotron">
-      <h1>Tanner Rentals</h1>
-      <p class="lead">Click on a property to view more details about it.</p>
-      {{#each properties}}
-        <hr>
-        <p class="lead">
-          {{#link-to "property" this}}{{this.address}}{{/link-to}}
-        </p>
-        {{#each this.photos}}
-          <img {{bind-attr src="this.url"}} height="120" width="120" />
-        {{/each}}
-        <hr>
-      {{/each}}
+{{#each properties}}
+  <h3><span class="label label-default">Featured Property</span></h3>
+  <div class="row">
+    <div class="col-sm-7">
+      <div class="img-feature-div">
+        <img {{bind-attr src="this.featurePhotoUrl"}} class="img-responsive" />
+      </div>
     </div>
+
+    <div class="col-sm-5">
+      <h2 class="featurette-heading">{{this.name}}</h2>
+      <p class="lead">{{this.description}}</p>
+      <address>
+        <strong>Address</strong><br>
+        {{this.address}}<br>
+        {{this.city}}, {{this.state}} {{this.zip}}<br>
+      </address>
+
+      <address>
+        <strong>Contact Info</strong><br>
+        Cody Tanner <br>
+        (801) 637-4393
+      </address>
+    </div>
+
   </div>
-  <div class="col-md-4 well">
-    <h4 class="text-center lead">Sign Up Today!</h4>
-    <form role="form">
-      <div class="form-group">
-        {{#each errors.email}}
-          {{this.message}}
-        {{/each}}
-        <label for="InputEmail">Email address</label>
-        {{input type="email" value=email class="form-control" placeholder="Enter email"}}
-      </div>
-      <div class="form-group">
-        <label for="InputPassword">Password</label>
-        {{input type="password" value=password class="form-control" placeholder="Password"}}
-      </div>
-      <div class="form-group">
-        <label for="InputPasswordConfirmation">Password Confirmation</label>
-        {{input type="password" value=passwordConfirmation class="form-control" placeholder="Password Confirmation"}}
-      </div>
-
-      <button type="submit" {{action "saveUser"}} class="btn btn-block btn-default">Submit</button>
-    </form>
-
-    <br />
-    <h4 class="text-center"> - OR - </h4>
-    <br />
-
-    {{#link-to "sessions.new" class="btn btn-success btn-block"}}Sign In{{/link-to}}
-  </div>
-</div>
+{{/each}}

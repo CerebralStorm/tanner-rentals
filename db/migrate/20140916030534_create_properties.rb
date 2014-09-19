@@ -7,6 +7,8 @@ class CreateProperties < ActiveRecord::Migration
       t.string :city
       t.string :state
       t.string :zip
+      t.string :description_header
+      t.text :description
 
       t.timestamps
     end

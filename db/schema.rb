@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20140917230859) do
   create_table "photos", force: true do |t|
     t.integer  "property_id"
     t.string   "url"
+    t.boolean  "feature"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,6 +70,8 @@ ActiveRecord::Schema.define(version: 20140917230859) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.string   "description_header"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

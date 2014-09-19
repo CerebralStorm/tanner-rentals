@@ -7,3 +7,6 @@ TannerRentals.Property = DS.Model.extend
   city: DS.attr 'string'
   state: DS.attr 'string'
   zip: DS.attr 'string'
+  featurePhotoUrl: DS.attr 'string'
+  description: DS.attr 'string'
+  descriptionHeader: DS.attr 'string'
