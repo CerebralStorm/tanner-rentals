@@ -1,22 +1,22 @@
-{{#each units}}
-  {{this.property}}
+{{#each unit in model}}
   <h3><span class="label label-default">Featured Property</span></h3>
   <div class="row">
+
     <div class="col-sm-7">
       <div class="img-feature-div">
-        <img {{bind-attr src="this.featurePhotoUrl"}} class="img-responsive" />
+        <img {{bind-attr src="unit.featurePhotoUrl"}} class="img-rounded" />
       </div>
     </div>
 
     <div class="col-sm-5">
-      <h2 class="featurette-heading">{{this.property.name}}</h2>
-      <p class="lead">{{this.description}}</p>
+      <h2 class="featurette-heading">{{unit.property.name}}</h2>
+      <p class="lead">{{unit.description}}</p>
       <address>
         <strong>Address</strong><br>
-        {{this.property.address}}<br>
-        {{this.property.city}}, {{this.property.state}} {{this.property.zip}}<br>
+        {{unit.property.address}}<br>
+        {{unit.property.city}}, {{unit.property.state}} {{unit.property.zip}}
       </address>
-
+      <br>
       <address>
         <strong>Contact Info</strong><br>
         Cody Tanner <br>

@@ -3,4 +3,6 @@ class PropertySerializer < ActiveModel::Serializer
 
   embed :ids
 
+  has_many :units
+
 end

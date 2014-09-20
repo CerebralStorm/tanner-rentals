@@ -1,3 +1,3 @@
 class Photo < ActiveRecord::Base
-  belongs_to :property
+  belongs_to :unit
 end
