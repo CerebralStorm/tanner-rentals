@@ -29,7 +29,7 @@ class LeasesController < ApplicationController
     params[:lease][:start_date] = Date.strptime(params[:lease][:start_date], "%m/%d/%Y")
     params[:lease][:resident_sign_date] = Date.strptime(params[:lease][:resident_sign_date], "%m/%d/%Y")
     params[:lease][:owner_sign_date] = Date.strptime(params[:lease][:owner_sign_date], "%m/%d/%Y")
-    binding.pry
+
     @lease = Lease.new(lease_params)
 
     if @lease.save

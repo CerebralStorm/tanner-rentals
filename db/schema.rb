@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917230859) do
+ActiveRecord::Schema.define(version: 20140920024135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "leases", force: true do |t|
     t.integer  "user_id"
-    t.integer  "property_id"
+    t.integer  "unit_id"
     t.boolean  "month_to_month"
     t.float    "rent"
     t.float    "security_deposit"
@@ -51,17 +51,17 @@ ActiveRecord::Schema.define(version: 20140917230859) do
     t.datetime "updated_at"
   end
 
-  add_index "leases", ["user_id", "property_id"], name: "index_leases_on_user_id_and_property_id", using: :btree
+  add_index "leases", ["user_id", "unit_id"], name: "index_leases_on_user_id_and_unit_id", using: :btree
 
   create_table "photos", force: true do |t|
-    t.integer  "property_id"
+    t.integer  "unit_id"
     t.string   "url"
     t.boolean  "feature"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "photos", ["property_id"], name: "index_photos_on_property_id", using: :btree
+  add_index "photos", ["unit_id"], name: "index_photos_on_unit_id", using: :btree
 
   create_table "properties", force: true do |t|
     t.integer  "user_id"
@@ -77,6 +77,17 @@ ActiveRecord::Schema.define(version: 20140917230859) do
   end
 
   add_index "properties", ["user_id"], name: "index_properties_on_user_id", using: :btree
+
+  create_table "units", force: true do |t|
+    t.integer  "property_id"
+    t.integer  "bedrooms"
+    t.integer  "bathrooms"
+    t.integer  "square_feet"
+    t.string   "description_header"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",         null: false

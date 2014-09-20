@@ -2,7 +2,7 @@ class CreateLeases < ActiveRecord::Migration
   def change
     create_table :leases do |t|
       t.integer :user_id
-      t.integer :property_id
+      t.integer :unit_id
       t.boolean :month_to_month
       t.float :rent
       t.float :security_deposit
@@ -34,6 +34,6 @@ class CreateLeases < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :leases, [:user_id, :property_id]
+    add_index :leases, [:user_id, :unit_id]
   end
 end

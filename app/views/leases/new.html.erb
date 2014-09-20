@@ -4,8 +4,8 @@
   <br>
 
   <%= form_for @lease do |f| %>
-    <%= f.hidden_field :property_id, @property.id %>
-    <%= f.hidden_field :user_id, @resident.id %>
+    <%= f.hidden_field :property_id, value: @property.id %>
+    <%= f.hidden_field :user_id, value: @resident.id %>
     <p>This Rental Agreement or Residential Lease shall evidence the complete terms and conditions under which the parties
     whose signatures appear below have agreed. Landlord/Lessor/Agent, &nbsp;<u><%= @owner.name %></u>&nbsp;, shall be
     referred to as "OWNER" and Tenant(s)/Lessee, &nbsp;<u><%= @resident.name %></u>&nbsp;, shall be referred to as
@@ -39,7 +39,7 @@
         </div>
       </li>
       <li>
-        PAYMENTS: Rent and/or other charges are to be paid at such place or method designated by the owner. Acceptable payments include payments made by check, money order, cash, or credit card. OWNER will provide receipts for payments upon request. A Security Deposit of $<u><%= f.number_field :security_deposit, class: "basic-input-sm" %></u> will be paid at time of first months rent. All payments are to be made payable to <u><%= f.text_field :make_payable_to, class: "basic-input-sm" %></u>.
+        PAYMENTS: Rent and/or other charges are to be paid at such place or method designated by the owner. Acceptable payments include payments made by check, money order, cash, or credit card. A Security Deposit of $<u><%= f.number_field :security_deposit, class: "basic-input-sm" %></u> will be paid at time of first months rent. All payments are to be made payable to <u><%= f.text_field :make_payable_to, class: "basic-input-sm" %></u>.
       </li>
       <li>
         SECURITY DEPOSITS: The total of the above deposits shall secure compliance with the terms and conditions of

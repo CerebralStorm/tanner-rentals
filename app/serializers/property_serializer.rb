@@ -3,8 +3,6 @@ class PropertySerializer < ActiveModel::Serializer
 
   embed :ids
 
-  has_many :photos
-
   def feature_photo_url
     photos.where(feature: true).first.try(:url)
   end
