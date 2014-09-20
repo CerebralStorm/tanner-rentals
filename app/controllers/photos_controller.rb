@@ -36,7 +36,7 @@ class PhotosController < ApplicationController
     respond_with :no_content
   end
 
-  private
+private
 
   def photo_params
     params.require(:photo).permit(:url)
