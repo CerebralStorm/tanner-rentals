@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140920024135) do
+ActiveRecord::Schema.define(version: 20140920164506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bills", force: true do |t|
+    t.integer  "lease_id"
+    t.integer  "user_id"
+    t.datetime "date_issued"
+    t.datetime "date_due"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "leases", force: true do |t|
     t.integer  "user_id"
@@ -45,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140920024135) do
     t.datetime "owner_sign_date"
     t.string   "resident_sig_url"
     t.string   "owner_sig_url"
+    t.string   "status",                       default: "pending"
     t.text     "inventory"
     t.text     "notes"
     t.datetime "created_at"
@@ -90,12 +101,12 @@ ActiveRecord::Schema.define(version: 20140920024135) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "",         null: false
-    t.string   "encrypted_password",     default: "",         null: false
+    t.string   "email",                  default: "",       null: false
+    t.string   "encrypted_password",     default: "",       null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,          null: false
+    t.integer  "sign_in_count",          default: 0,        null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -104,7 +115,7 @@ ActiveRecord::Schema.define(version: 20140920024135) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,          null: false
+    t.integer  "failed_attempts",        default: 0,        null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.datetime "created_at"
@@ -112,7 +123,7 @@ ActiveRecord::Schema.define(version: 20140920024135) do
     t.string   "name"
     t.string   "phone"
     t.boolean  "has_lease",              default: false
-    t.string   "role",                   default: "Resident"
+    t.string   "role",                   default: "Tenant"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

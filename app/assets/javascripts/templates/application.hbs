@@ -16,9 +16,17 @@
           {{#link-li}}
             {{#link-to 'index'}}<i class="fa fa-home"></i> Home{{/link-to}}
           {{/link-li}}
-          {{#link-li}}
-            {{#link-to 'user'}}Profile{{/link-to}}
-          {{/link-li}}
+          {{#if currentUser}}
+            {{#if currentUser.isOwner}}
+              {{#link-li}}
+                {{#link-to 'owner'}}Profile{{/link-to}}
+              {{/link-li}}
+            {{else}}
+              {{#link-li}}
+                {{#link-to 'tenant'}}Profile{{/link-to}}
+              {{/link-li}}
+            {{/if}}
+          {{/if}}
           {{#link-li}}
             {{#link-to 'contact'}}Contact{{/link-to}}
           {{/link-li}}

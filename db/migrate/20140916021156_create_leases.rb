@@ -29,6 +29,7 @@ class CreateLeases < ActiveRecord::Migration
       t.datetime :owner_sign_date
       t.string :resident_sig_url
       t.string :owner_sig_url
+      t.string :status, default: "pending"
       t.text :inventory
       t.text :notes
 

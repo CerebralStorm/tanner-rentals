@@ -9,7 +9,10 @@ TannerRentals.Router.map ()->
 
   @resource 'users', ->
     @route 'new'
+
   @resource 'user'
+  @resource 'tenant'
+  @resource 'owner'
 
   @resource 'sessions', ->
     @route 'new'
