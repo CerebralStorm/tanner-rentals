@@ -1,15 +1,14 @@
+<div class="full-page">
 {{#each unit in model}}
-  <h3><span class="label label-default">Featured Property</span></h3>
+  <h3><span class="label label-default">Featured Unit</span></h3>
   <div class="row">
 
     <div class="col-sm-7">
-      <div class="img-feature-div">
-        <img {{bind-attr src="unit.featurePhotoUrl"}} class="img-rounded" />
-      </div>
+      <img {{bind-attr src="unit.featurePhotoUrl"}} class="img-rounded img-responsive" />
     </div>
 
     <div class="col-sm-5">
-      <h2 class="featurette-heading">{{unit.property.name}}</h2>
+      <h2>{{unit.property.name}}</h2>
       <p class="lead">{{unit.description}}</p>
       <address>
         <strong>Address</strong><br>
@@ -25,4 +24,6 @@
     </div>
 
   </div>
+  <br>
 {{/each}}
+</div>
