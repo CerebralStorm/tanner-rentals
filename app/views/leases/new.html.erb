@@ -24,6 +24,9 @@
         and continue; (check one)
 
         <div class="radio">
+          <div id="lease-duration-adjust">
+          Number of Months (Default: 12) <%= text_field_tag :month_to_month_duration %>
+          </div>
           <label>
             <%= f.radio_button :month_to_month, "0", checked: true%>
             A. until <u><span class="end-date"></span></u>, as a leasehold. Thereafter it shall become a month-to-month tenancy. If RESIDENT should move from the premises prior to the expiration of this time period, he shall be liable for all rent due until such

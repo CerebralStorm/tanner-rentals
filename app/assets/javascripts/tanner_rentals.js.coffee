@@ -11,9 +11,16 @@
 
 $ ->
   $('.datepicker').datepicker()
+  $("#lease-duration-adjust").hide()
 
   $('#lease_start_date').on "change", (event) ->
     date = moment($(event.target).val(), "MM/DD/YYYY").add(12, "months")
+    $(".end-date").html(date.format("MM/DD/YYYY"))
+    $("#lease-duration-adjust").show()
+
+  $('#month_to_month_duration').on "change", (event) ->
+    numOfMonths = parseInt($(event.target).val())
+    date = moment($('#lease_start_date').val(), "MM/DD/YYYY").add(numOfMonths, "months")
     $(".end-date").html(date.format("MM/DD/YYYY"))
 
   $('.sigPad').signaturePad()
