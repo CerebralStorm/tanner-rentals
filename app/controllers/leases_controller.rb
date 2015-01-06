@@ -2,9 +2,17 @@ require 'open3'
 
 class LeasesController < ApplicationController
   before_filter :authenticate_user!
+  respond_to :json
+
+  def index
+    if params[:ids]
+      respond_with Lease.where(id: params[:ids])
+    else
+      respond_with Lease.all
+    end
+  end
 
   def new
-    @resident = User.find(params[:user_id])
     @unit = Unit.find(params[:unit_id])
     @owner = @unit.owner
     @lease = Lease.new
@@ -24,6 +32,13 @@ class LeasesController < ApplicationController
         send_data(pdf, :type => "application/pdf", :disposition  => "inline")
       end
     end
+  end
+
+  def edit
+    @lease = Lease.find(params[:id])
+    @resident = @lease.user
+    @unit = @lease.unit
+    @owner = @unit.owner
   end
 
   def create
@@ -67,7 +82,7 @@ private
   def lease_params
     params.require(:lease).permit(
       :user_id,
-      :property_id,
+      :unit_id,
       :rent,
       :security_deposit,
       :additional_charges,

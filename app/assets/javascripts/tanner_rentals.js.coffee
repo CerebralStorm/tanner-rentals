@@ -32,3 +32,6 @@ $ ->
   $("#owner_sig").toggle($("#lease_owner_consent_to_esign").is("checked"))
   $("#lease_owner_consent_to_esign").on "change", (event) ->
     $("#owner_sig").toggle(event.target.checked)
+
+  $('#lease_user_id').on 'change', (event) ->
+    $('#resident_name').html($(event.target).text())

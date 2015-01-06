@@ -1,4 +1,5 @@
 TannerRentals.Lease = DS.Model.extend
-  userId: DS.attr 'number'
+  user: DS.belongsTo('user')
+  unit: DS.belongsTo('unit')
   startDate: DS.attr 'date'
   endDate: DS.attr 'date'

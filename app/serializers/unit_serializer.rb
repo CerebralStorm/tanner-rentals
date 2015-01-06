@@ -1,8 +1,6 @@
 class UnitSerializer < ActiveModel::Serializer
   attributes :id, :bedrooms, :bathrooms, :feature_photo_url, :description_header, :description, :vacancy
 
-  embed :ids
-
   has_many :photos
   has_many :leases
 
