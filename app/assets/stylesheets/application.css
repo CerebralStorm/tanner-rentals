@@ -27,17 +27,6 @@ html, body, .container {
   padding: 50px;
 }
 
-@font-face {
-  font-family: 'Journal';
-  src: url(<%= asset_path 'journal.eot' %>);
-  src: url(<%= asset_path 'journal.eot?#iefix' %>) format('embedded-opentype'>),
-       url(<%= asset_path 'journal.woff') format('woff' %>),
-       url(<%= asset_path 'journal.ttf') format('truetype' %>),
-       url(<%= asset_path 'journal.svg#JournalRegular' %>) format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .basic-input-xs {
   width: 75px;
 }
