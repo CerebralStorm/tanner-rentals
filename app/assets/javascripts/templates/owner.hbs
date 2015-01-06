@@ -5,8 +5,8 @@
   <li>
     {{property.name}}
     <ul>
-      {{#each unit in property.units}}
-        <li>{{unit.descriptionHeader}}</li>
+      {{#each unit in property.units itemController="unit"}}
+        <a {{bind-attr href="unit.newLeaseUrl"}} target="_blank">New Lease for this property</a>
       {{/each}}
     </ul
   </li>

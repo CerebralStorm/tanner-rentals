@@ -1,5 +1,4 @@
 TannerRentals.UnitsController = Ember.ObjectController.extend
-
   actions:
     saveUser: ->
       user = @get('model')

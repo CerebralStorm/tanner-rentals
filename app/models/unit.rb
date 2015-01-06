@@ -3,4 +3,6 @@ class Unit < ActiveRecord::Base
 
   has_many :photos
   has_many :leases
+
+  delegate :owner, to: :property
 end

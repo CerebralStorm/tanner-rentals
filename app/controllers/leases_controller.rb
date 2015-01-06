@@ -5,8 +5,8 @@ class LeasesController < ApplicationController
 
   def new
     @resident = User.find(params[:user_id])
-    @property = Property.find(params[:property_id])
-    @owner = @property.owner
+    @unit = Unit.find(params[:unit_id])
+    @owner = @unit.owner
     @lease = Lease.new
   end
 

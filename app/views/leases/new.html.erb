@@ -4,14 +4,14 @@
   <br>
 
   <%= form_for @lease do |f| %>
-    <%= f.hidden_field :property_id, value: @property.id %>
+    <%= f.hidden_field :unit_id, value: @unit.id %>
     <%= f.hidden_field :user_id, value: @resident.id %>
     <p>This Rental Agreement or Residential Lease shall evidence the complete terms and conditions under which the parties
     whose signatures appear below have agreed. Landlord/Lessor/Agent, &nbsp;<u><%= @owner.name %></u>&nbsp;, shall be
     referred to as "OWNER" and Tenant(s)/Lessee, &nbsp;<u><%= @resident.name %></u>&nbsp;, shall be referred to as
     "RESIDENT." As consideration for this agreement, OWNER agrees to rent/lease to RESIDENT and RESIDENT
     agrees to rent/lease from OWNER for use solely as a private residence, the premises located at
-    &nbsp;<u><%= @property.address %></u>&nbsp;in the city of &nbsp;<u><%= @property.city %></u>&nbsp;.</p>
+    &nbsp;<u><%= @unit.property.address %></u>&nbsp;in the city of &nbsp;<u><%= @unit.property.city %></u>&nbsp;.</p>
 
     <ol>
       <li>
