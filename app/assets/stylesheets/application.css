@@ -12,6 +12,3 @@
  *= require jquery.signaturepad
  *= require_tree .
  */
-
-@import "font-awesome-sprockets";
-@import "font-awesome";
