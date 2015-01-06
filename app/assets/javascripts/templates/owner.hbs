@@ -1,1 +1,13 @@
 <h4>Profile for {{currentUser.email}}</h4>
+
+<ul>
+{{#each property in properties}}
+  <li>
+    {{property.name}}
+    <ul>
+      {{#each unit in property.units}}
+        <li>{{unit.descriptionHeader}}</li>
+      {{/each}}
+    </ul
+  </li>
+{{/each}}
