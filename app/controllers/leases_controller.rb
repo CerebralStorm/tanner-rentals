@@ -13,8 +13,8 @@ class LeasesController < ApplicationController
   def show
     @lease = Lease.find(params[:id])
     @resident = @lease.user
-    @property = @lease.property
-    @owner = @property.owner
+    @unit = @lease.unit
+    @owner = @unit.owner
 
     respond_to do |format|
       format.html { render }
