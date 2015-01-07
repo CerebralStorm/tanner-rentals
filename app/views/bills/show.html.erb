@@ -58,7 +58,7 @@
 
   <table class="table table-bordered table-hover table-condensed">
     <tr class="success">
-      <td colspan="2">
+      <td colspan="3">
         <h4><strong>Payments</strong></h4>
       </td>
     </tr>
@@ -75,7 +75,7 @@
     </tr>
     <% end %>
     <tr class="subtotal">
-      <td></td>
+      <td colspan="2"></td>
       <td><%= number_to_currency(@bill.payment_total) %></td>
     </tr>
   </table>
