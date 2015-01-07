@@ -3,6 +3,7 @@ require 'open3'
 class LeasesController < ApplicationController
   before_filter :authenticate_user!
   respond_to :json
+  layout "blank"
 
   def index
     if params[:ids]

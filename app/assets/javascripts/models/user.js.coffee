@@ -1,4 +1,6 @@
 TannerRentals.User = DS.Model.extend
+  bills: DS.hasMany('bill', { async: true })
+  leases: DS.hasMany('lease', { async: true })
   password: DS.attr('string')
   passwordConfirmation: DS.attr('string')
   email: DS.attr('string')

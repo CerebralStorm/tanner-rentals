@@ -4,6 +4,7 @@ TannerRentals::Application.routes.draw do
 
   resources :properties
   resources :leases
+  resources :bills
   resources :photos
   resources :units
 

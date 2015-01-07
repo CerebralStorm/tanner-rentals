@@ -74,9 +74,17 @@
             {{#link-to 'index'}}Home{{/link-to}}
           </li>
           <li class="footer-menu-divider">&sdot;</li>
-          {{#link-li}}
-            {{#link-to 'user'}}Profile{{/link-to}}
-          {{/link-li}}
+          {{#if currentUser}}
+            {{#if currentUser.isOwner}}
+              {{#link-li}}
+                {{#link-to 'owner'}}Profile{{/link-to}}
+              {{/link-li}}
+            {{else}}
+              {{#link-li}}
+                {{#link-to 'tenant'}}Profile{{/link-to}}
+              {{/link-li}}
+            {{/if}}
+          {{/if}}
           <li class="footer-menu-divider">&sdot;</li>
           <li>
             {{#link-to 'contact'}}Contact{{/link-to}}
