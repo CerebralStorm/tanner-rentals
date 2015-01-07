@@ -5,12 +5,8 @@
 
   <%= form_for @lease do |f| %>
     <%= f.hidden_field :unit_id, value: @unit.id %>
-    <% if @resident.present? %>
-      <%= f.hidden_field :user_id, value: @resident.id %>
-    <% else %>
-      <%= f.label :user_id, "Select the user for this lease" %>
-      <%= f.collection_select :user_id, User.all, :id, :name %>
-    <% end %>
+    <%= f.label :user_id, "Select the user for this lease" %>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
 
     <p>This Rental Agreement or Residential Lease shall evidence the complete terms and conditions under which the parties
     whose signatures appear below have agreed. Landlord/Lessor/Agent, &nbsp;<u><%= @owner.name %></u>&nbsp;, shall be
@@ -33,7 +29,7 @@
         per month on day
         <%= f.select :day_rent_due, (1..28), {} %>
         of each month. This agreement shall commence on
-        <%= f.text_field :start_date, class: "basic-input-sm datepicker" %>
+        <%= f.text_field :start_date, value: @lease.try(:start_date).to_date, class: "basic-input-sm datepicker" %>
         and continue; (check one)
 
         <div class="radio">
@@ -251,7 +247,7 @@
 
         <div id="resident_sig" class="sigPad">
           <%= f.label :resident_sign_date, "Date" %>
-          <%= f.text_field :resident_sign_date, class: "datepicker" %>
+          <%= f.text_field :resident_sign_date, value: @lease.try(:resident_sign_date).to_date, class: "datepicker" %>
           <label for="name">Print your name</label>
           <input type="text" name="resident_name" id="resident_name" class="name">
           <p class="typeItDesc">Review your signature</p>
@@ -278,7 +274,7 @@
         </div>
         <div id="owner_sig" class="sigPad">
           <%= f.label :owner_sign_date, "Date" %>
-          <%= f.text_field :owner_sign_date, class: "datepicker" %>
+          <%= f.text_field :owner_sign_date, value: @lease.try(:owner_sign_date).to_date, class: "datepicker" %>
           <label for="name">Print your name</label>
           <input type="text" name="owner_name" id="owner_name" class="name">
           <p class="typeItDesc">Review your signature</p>

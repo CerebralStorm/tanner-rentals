@@ -65,6 +65,30 @@ class LeasesController < ApplicationController
     end
   end
 
+  def update
+    params[:lease][:start_date] = Date.strptime(params[:lease][:start_date], "%m/%d/%Y")
+    params[:lease][:resident_sign_date] = Date.strptime(params[:lease][:resident_sign_date], "%m/%d/%Y")
+    params[:lease][:owner_sign_date] = Date.strptime(params[:lease][:owner_sign_date], "%m/%d/%Y")
+
+    @lease = Lease.find(params[:id])
+
+    if @lease.update(lease_params)
+      if params[:resident_signature].present?
+        response = create_and_upload_signature(params[:resident_signature])
+        @lease.update_attributes(resident_sig_url: response['url'])
+      end
+
+      if params[:owner_signature].present?
+        response = create_and_upload_signature(params[:owner_signature])
+        @lease.update_attributes(resident_sig_url: response['url'])
+      end
+
+      redirect_to @lease
+    else
+      render :edit
+    end
+  end
+
 
   def create_and_upload_signature(data)
     instructions = JSON.parse(data).map { |h| "line #{h['mx'].to_i},#{h['my'].to_i} #{h['lx'].to_i},#{h['ly'].to_i}" } * ' '

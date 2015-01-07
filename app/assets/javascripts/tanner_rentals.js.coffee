@@ -25,11 +25,11 @@ $ ->
 
   $('.sigPad').signaturePad()
 
-  $("#resident_sig").hide()
+  $("#resident_sig").toggle($("#lease_resident_consent_to_esign").is(':checked'))
   $("#lease_resident_consent_to_esign").on "change", (event) ->
     $("#resident_sig").toggle(event.target.checked)
 
-  $("#owner_sig").toggle($("#lease_owner_consent_to_esign").is("checked"))
+  $("#owner_sig").toggle($("#lease_owner_consent_to_esign").is(":checked"))
   $("#lease_owner_consent_to_esign").on "change", (event) ->
     $("#owner_sig").toggle(event.target.checked)
 
