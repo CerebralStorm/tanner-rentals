@@ -64,11 +64,13 @@
     </tr>
     <tr>
       <th>Description</th>
+      <th>Paid On</th>
       <th>Amount</th>
     </tr>
     <% @bill.payments.each do |payment| %>
     <tr>
       <td><%= payment.description %></td>
+      <td><%= payment.payment_date %></td>
       <td><%= number_to_currency(payment.amount) %></td>
     </tr>
     <% end %>
