@@ -1,0 +1,2 @@
+class Credit < LineItem
+end
