@@ -7,6 +7,7 @@ TannerRentals::Application.routes.draw do
   resources :bills
   resources :photos
   resources :units
+  resources :charges
 
   post '/mailer', to: "mailer#create"
 
