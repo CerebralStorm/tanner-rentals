@@ -11,6 +11,7 @@
     <meta name="current-user" content="<%= (current_user.id).to_json %>" />
   <% end %>
 
+  <%= render 'layouts/flash' %>
   <div id="ember-body">
     <%= yield %>
   </div>

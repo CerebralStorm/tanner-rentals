@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.signaturepad
 //= require moment
+//= require bootstrap
 //= require bootstrap-datepicker
 //= require turbolinks
 //= require handlebars

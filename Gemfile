@@ -20,6 +20,7 @@ gem 'cloudinary'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'thin'
+gem 'cancancan'
 
 group :development, :test do
   gem 'pry'
