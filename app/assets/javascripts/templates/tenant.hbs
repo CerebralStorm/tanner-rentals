@@ -3,6 +3,6 @@
 {{model}}
 <ul>
 {{#each bill in currentUser.bills itemController="bill"}}
-  <li><a {{bind-attr href="bill.billUrl"}} target="_blank">Bill for {{bill.dateIssued}}</a></li>
+  <li><a {{bind-attr href="bill.billUrl"}} target="_blank">Bill for {{dateTime bill.dateIssued}}</a></li>
 {{/each}}
 </ul>
