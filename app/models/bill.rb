@@ -21,4 +21,12 @@ class Bill < ActiveRecord::Base
   def balance
     charge_total - (payment_total + credit_total)
   end
+
+  def balance_in_cents
+    (balance * 100).to_i
+  end
+
+  def can_pay?
+    self.status != "Paid"
+  end
 end

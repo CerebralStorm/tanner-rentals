@@ -4,10 +4,19 @@
       <h2>Make a payment</h2>
       <hr>
       <%= form_tag({controller: "charges", action: "create"}, method: "POST", id: "payment-form", :"data-stripe-key" => Rails.configuration.stripe[:publishable_key]) %>
+        <%= hidden_field_tag :bill_id, @bill.id %>
         <span class="payment-errors"></span>
         <div class="form-group">
+          <%= label_tag :payment_amount, "Payment Amount", class: 'control-label' %>
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <%= number_field_tag :payment_amount, @bill.balance.to_i, class: 'form-control', required: true %>
+            <div class="input-group-addon">.00</div>
+          </div>
+        </div>
+        <div class="form-group">
           <%= label_tag :name, "Name", class: 'control-label' %>
-          <%= text_field_tag :name, nil, name: nil, "data-stripe" => "name", class: 'form-control', required: true %>
+          <%= text_field_tag :name, current_user.name, name: nil, "data-stripe" => "name", class: 'form-control', required: true %>
         </div>
         <div class="form-group">
           <%= hidden_field_tag :paid, true %>
