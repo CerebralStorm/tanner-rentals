@@ -21,3 +21,10 @@
     </ul
   </li>
 {{/each}}
+</ul>
+
+<ul>
+  {{#each bill in bills itemController="bill"}}
+    <li>{{bill.user.name}} | <a {{bind-attr href="bill.billUrl"}} target="_blank">Bill for {{dateTime bill.dateIssued}}</a></li>
+  {{/each}}
+</ul>

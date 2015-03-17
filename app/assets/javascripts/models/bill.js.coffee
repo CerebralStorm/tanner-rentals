@@ -4,3 +4,8 @@ TannerRentals.Bill = DS.Model.extend
   dateIssued: DS.attr 'string'
   dateDue: DS.attr 'string'
   status: DS.attr 'string'
+
+  billUrl: (->
+    billId = @get('id')
+    "/bills/#{billId}"
+  ).property('id')
