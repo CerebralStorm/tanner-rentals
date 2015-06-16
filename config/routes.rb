@@ -11,8 +11,7 @@ TannerRentals::Application.routes.draw do
 
   post '/mailer', to: "mailer#create"
 
-  devise_for :users, :controllers => {:registrations => "users"}
+  devise_for :users
   resources :users
-  resources :sessions
 
 end
