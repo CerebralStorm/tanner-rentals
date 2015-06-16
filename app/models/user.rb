@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :leases
   has_many :bills
+  has_many :properties
 
   def name
     read_attribute(:name).present? ? read_attribute(:name) : read_attribute(:email)
