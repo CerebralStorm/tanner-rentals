@@ -11,11 +11,9 @@ namespace :bills do
   end
 
   task :apply_charges => :environment do
-    if DateTime.now.beginning_of_month.to_date === Date.today
-      Bill.find_each do |bill|
-        bill.charges.create!(amount: bill.lease.rent) if bill.charges.empty?
-        bill.payments.create!(amount: bill.lease.rent) if bill.status == 'paid'
-      end
+    Bill.find_each do |bill|
+      bill.charges.create!(amount: bill.lease.rent) if bill.charges.empty?
+      bill.payments.create!(amount: bill.lease.rent) if bill.status == 'paid'
     end
   end
 end
