@@ -6,6 +6,8 @@ class Bill < ActiveRecord::Base
   has_many :credits
   has_many :charges
 
+  validates :status, inclusion: { in: %w(paid unpaid) }
+
   def payment_total
     payments.sum(&:amount)
   end
@@ -27,6 +29,6 @@ class Bill < ActiveRecord::Base
   end
 
   def can_pay?
-    self.status != "Paid"
+    self.status != "paid"
   end
 end
