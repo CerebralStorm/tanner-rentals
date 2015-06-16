@@ -13,7 +13,7 @@ namespace :bills do
   task :apply_charges => :environment do
     Bill.find_each do |bill|
       bill.charges.create!(amount: bill.lease.rent) if bill.charges.empty?
-      bill.payments.create!(amount: bill.lease.rent) if bill.status == 'paid'
+      bill.payments.create!(amount: bill.lease.rent) if bill.status == 'paid' and bill.payments.empty?
     end
   end
 end

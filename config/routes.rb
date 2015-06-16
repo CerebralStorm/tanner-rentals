@@ -1,6 +1,6 @@
 TannerRentals::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  root to: "ember#start"
+  root to: "static#index"
 
   resources :properties
   resources :leases

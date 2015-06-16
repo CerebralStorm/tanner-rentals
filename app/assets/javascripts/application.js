@@ -12,25 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.signaturepad
-//= require moment
 //= require bootstrap
 //= require bootstrap-datepicker
-//= require turbolinks
-//= require handlebars
-//= require ember
-//= require ember-data
-//= require ember-animate
 //= require_self
-//= require tanner_rentals
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
-
-
-window.TannerRentals = Ember.Application.create();
-window.TannerRentals.deferReadiness();
-
-$(document).ready(function () {
-  if($('#ember-body').length > 0) {
-    window.TannerRentals.advanceReadiness();
-  }
-});
