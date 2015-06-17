@@ -19,9 +19,7 @@ var PropertyBox = React.createClass({
     return (
       <div>
         <h1>Properties</h1>
-        <div className='list-group'>
-          <PropertyList data={this.state.data} />
-        </div>
+        <NavLinks navLinks={this.state.data} />
       </div>
     );
   }

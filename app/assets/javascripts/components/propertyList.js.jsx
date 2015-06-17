@@ -3,11 +3,13 @@ var PropertyList = React.createClass({
       var propertyNodes = this.props.data.map(function (data) {
         var property = data.property;
         return (
-          <Property key={property.id} name={property.name} address={property.address} city={property.city} state={property.state} />
+          <li>
+            <Property key={property.id} name={property.name} address={property.address} city={property.city} state={property.state} />
+          </li>
         );
       });
       return (
-        <div className="propertyList">
+        <div className='nav nav-pills'>
           {propertyNodes}
         </div>
       );

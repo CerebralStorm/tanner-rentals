@@ -78,4 +78,5 @@ TannerRentals::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   config.react.variant = :production
+  config.react.addons = true
 end

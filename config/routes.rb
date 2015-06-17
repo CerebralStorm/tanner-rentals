@@ -3,6 +3,8 @@ TannerRentals::Application.routes.draw do
   root to: "static#index"
 
   get '/owners', to: "owners#index", as: :owners
+  get '/tenants', to: "tenants#index", as: :tenants
+
   resources :properties
   resources :leases
   resources :bills

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(user)
     if user.role == 'Tenant'
-      root_path
+      tenants_path
     else
       owners_path
     end
