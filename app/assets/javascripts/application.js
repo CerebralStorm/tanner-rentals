@@ -13,9 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require bootstrap-datepicker
 //= require_self
 //= require react
 //= require react_ujs
 //= require components
 //= require_tree .
+
+var self, window, global = global || window || self;
+
+ReactRouter = require('react-router');

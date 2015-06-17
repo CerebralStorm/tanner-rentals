@@ -6,10 +6,4 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    .site-wrapper
-      .site-wrapper-inner
-        .cover-container
-          = render 'layouts/navbar'
-          = render 'layouts/flash'
-          = yield
-          = render 'layouts/footer'
+    = react_component('App')

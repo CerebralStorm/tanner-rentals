@@ -1,0 +1,13 @@
+{
+  "name": "tanner-rentals",
+  "devDependencies" : {
+    "browserify": "~> 6.3",
+    "browserify-incremental": "^1.4.0",
+    "react-router": "0.13.3",
+    "reactify": "^1.1.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10"
+  }
+}

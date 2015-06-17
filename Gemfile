@@ -20,6 +20,8 @@ gem 'cancancan'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'react-rails', '~> 1.0'
 gem 'haml'
+gem "browserify-rails"
+gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
   gem 'pry'
